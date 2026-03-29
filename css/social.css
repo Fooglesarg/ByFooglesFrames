@@ -1,0 +1,241 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN MAESTRA
+   ========================================= */
+:root {
+    --bg-social: #050505;
+    --accent-social: #d30000; /* Rojo principal */
+    --accent-glow: #6a0dad;   /* Violeta de apoyo */
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.4);
+    --neon-shadow: 0 10px 40px rgba(211, 0, 0, 0.2);
+    --transition-smooth: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-social);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVBAR (GLASSMORPHISM)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 25px 5%;
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex; justify-content: flex-end; align-items: center;
+}
+
+.nav-links { list-style: none; display: flex; gap: 45px; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-dim);
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 5px; transition: var(--transition-smooth);
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: ''; position: absolute; bottom: -10px; left: 50%;
+    width: 0; height: 1px; background: var(--accent-social);
+    transition: var(--transition-smooth); transform: translateX(-50%);
+}
+
+.nav-links li a:hover { color: var(--text-main); letter-spacing: 7px; }
+.nav-links li a:hover::after { width: 100%; }
+
+/* =========================================
+   3. CABECERA (ANIMACIÓN ROJO Y VIOLETA)
+   ========================================= */
+.category-header-social {
+    text-align: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10% 0;
+    position: relative; /* Necesario para posicionar la flecha */
+}
+
+.category-header-social h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 25px;
+    margin: 0;
+    line-height: 1.1;
+    background: linear-gradient(
+        to right, 
+        #ffffff 20%, 
+        var(--accent-social) 40%, 
+        var(--accent-glow) 60%, 
+        #ffffff 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 6s linear infinite;
+}
+
+@keyframes shineText {
+    to { background-position: 200% center; }
+}
+
+.category-tagline {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-size: 0.8rem;
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+/* Indicador de Scroll Animado (Flecha) */
+.category-header-social::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--accent-social), var(--accent-glow), transparent);
+    animation: scrollMoveSocial 2s ease-in-out infinite;
+}
+
+@keyframes scrollMoveSocial {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+}
+
+/* =========================================
+   4. GRILLA DE CATEGORÍA (TARJETAS)
+   ========================================= */
+.projects-grid-social {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 120px;
+    padding: 100px 8%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.project-card-social a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+.project-card-social {
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: var(--transition-smooth);
+}
+
+.image-wrapper-social {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+}
+
+.image-wrapper-social img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.35) grayscale(100%);
+    transition: var(--transition-smooth);
+}
+
+.project-card-social:hover {
+    transform: translateY(-15px);
+    border-color: var(--accent-social);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.9), var(--neon-shadow);
+}
+
+.project-card-social:hover img {
+    filter: brightness(0.9) grayscale(0%);
+    transform: scale(1.05);
+}
+
+.project-label-social {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 80px 60px;
+    background: linear-gradient(to top, rgba(0,0,0,1) 30%, transparent);
+    z-index: 2; pointer-events: none;
+}
+
+.project-label-social h3 {
+    font-size: 3.5rem; letter-spacing: 10px; text-transform: uppercase;
+    margin: 0; font-weight: 900;
+    color: #ffffff;
+}
+
+.label-action {
+    font-size: 0.8rem; color: var(--accent-social);
+    text-transform: uppercase; letter-spacing: 8px;
+    font-weight: 900; margin-top: 15px; display: block;
+}
+
+/* =========================================
+   5. ÁLBUM DINÁMICO (GRID 6 COL)
+   ========================================= */
+.photo-stream-container {
+    max-width: 1900px; margin: 0 auto; padding: 0 5% 100px;
+}
+
+.stream-grid-mixed {
+    display: grid; grid-template-columns: repeat(6, 1fr); 
+    gap: 50px 30px; align-items: start;
+}
+
+.stream-item img {
+    width: 100%; height: auto; display: block; object-fit: cover;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    filter: brightness(0.8); transition: var(--transition-smooth);
+}
+
+.stream-item.horizontal { grid-column: span 3; } 
+.stream-item.vertical { grid-column: span 2; }
+
+.stream-item:hover img {
+    filter: brightness(1); transform: translateY(-10px);
+    border-color: var(--accent-social);
+    box-shadow: 0 40px 100px rgba(211, 0, 0, 0.2);
+}
+
+/* =========================================
+   6. FOOTER Y RESPONSIVE
+   ========================================= */
+.navigation-footer { display: flex; justify-content: center; padding: 150px 0; }
+.btn-back {
+    padding: 25px 80px; border: 1px solid #1a1a1a;
+    color: var(--text-dim); text-decoration: none;
+    text-transform: uppercase; letter-spacing: 8px;
+    font-size: 0.75rem; font-weight: 800; transition: var(--transition-smooth);
+}
+.btn-back:hover { border-color: var(--accent-social); color: #fff; letter-spacing: 10px; }
+
+@media (max-width: 1024px) {
+    .stream-grid-mixed { grid-template-columns: repeat(2, 1fr); }
+    .stream-item.horizontal, .stream-item.vertical { grid-column: span 1; }
+}
+
+@media (max-width: 768px) {
+    .category-header-social h1 { letter-spacing: 10px; font-size: 2.5rem; }
+    .projects-grid-social { gap: 60px; padding: 50px 5%; }
+    .image-wrapper-social { height: 450px; }
+}

@@ -1,0 +1,337 @@
+/* =========================================
+   1. CONFIGURACIÓN MAESTRA Y VARIABLES
+   ========================================= */
+:root {
+    --bg-dark: #050505;
+    --accent-red: #d30000;         
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.5);
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    --border-soft: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (NAVBAR)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 5%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+/* =========================================
+   3. SECCIÓN HERO (BYFOOGLESFRAMES - FIX)
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.brand-title {
+    /* Ajustado para que 15 letras + espacios entren en pantalla */
+    font-size: clamp(1.5rem, 6.5vw, 5rem); 
+    font-weight: 900;
+    /* Reducido de 25px a un rango más real para evitar desborde */
+    letter-spacing: clamp(5px, 1.5vw, 15px); 
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    width: 100%;
+    display: inline-block;
+    
+    /* Degradado y Corrección de error */
+    background: linear-gradient(to right, #ffffff, #666666);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    
+    padding: 10px 0;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: clamp(4px, 1vw, 8px);
+    margin-bottom: 50px;
+}
+
+.btn-primary {
+    padding: 18px 45px;
+    border: 1px solid var(--text-dim);
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--text-main);
+    color: #000;
+}
+
+/* =========================================
+   4. GALERÍA / CATEGORÍAS (GRANDE Y CINE)
+   ========================================= */
+.gallery-section {
+    padding: 100px 5%;
+}
+
+.section-title h2 {
+    font-size: 0.8rem;
+    letter-spacing: 12px;
+    text-align: center;
+    margin-bottom: 80px;
+    color: var(--accent-red);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    height: 700px; 
+    background: #111;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.5);
+    transition: var(--transition);
+}
+
+.photo-info {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 2;
+}
+
+.photo-info h3 {
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.photo-info p {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+}
+
+.photo-item:hover img {
+    filter: grayscale(0%) brightness(0.9);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   5. SOBRE MÍ
+   ========================================= */
+.about-section {
+    padding: 160px 10%;
+    background-color: #030303;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--border-soft);
+}
+
+.about-container {
+    max-width: 850px;
+    text-align: center;
+}
+
+.about-subtitle {
+    display: block;
+    color: var(--accent-red);
+    font-size: 0.7rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: var(--text-main);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 2.1;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.about-specs {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.spec-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: var(--accent-red);
+    letter-spacing: 3px;
+}
+
+.spec-value {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.main-footer {
+    padding: 100px 0 60px;
+    background-color: #020202;
+    border-top: 1px solid var(--border-soft);
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.1);
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.footer-brand:hover .footer-logo {
+    filter: grayscale(0%);
+    border-color: var(--accent-red);
+    transform: rotate(5deg) scale(1.1);
+}
+
+.footer-brand-name {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-link {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    transition: var(--transition);
+}
+
+.footer-link i { color: #fff; font-size: 1.1rem; margin-right: 8px; }
+
+.footer-divider { color: rgba(255,255,255,0.1); }
+
+.footer-bottom {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   7. RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .photo-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .brand-title { letter-spacing: 5px; font-size: 2rem; }
+    .photo-item { height: 500px; }
+    .photo-info { left: 20px; bottom: 20px; }
+    .photo-info h3 { font-size: 1.5rem; }
+    .about-specs { flex-direction: column; gap: 40px; }
+    .footer-contact { flex-direction: column; gap: 20px; }
+    .footer-divider { display: none; }
+}

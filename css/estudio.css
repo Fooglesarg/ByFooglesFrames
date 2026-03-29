@@ -1,0 +1,150 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN MAESTRA (BLUE EDITION)
+   ========================================= */
+:root {
+    --bg-estudio: #020408; /* Azul noche casi negro */
+    --accent-estudio: #00d4ff; /* Azul eléctrico / Cian */
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.5);
+    --estudio-glow: 0 0 35px rgba(0, 212, 255, 0.25);
+    --transition-smooth: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-estudio);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 25px 5%;
+    background: rgba(2, 4, 8, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.05);
+    display: flex; justify-content: flex-end; align-items: center;
+}
+
+.nav-links { list-style: none; display: flex; gap: 45px; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-dim);
+    font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 5px; transition: var(--transition-smooth);
+}
+.nav-links li a:hover, .nav-links li a.active { color: var(--accent-estudio); }
+
+/* =========================================
+   3. CABECERA
+   ========================================= */
+.category-header-estudio {
+    height: 95vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; position: relative; padding: 0 10%;
+}
+
+.category-header-estudio h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 900; text-transform: uppercase; letter-spacing: 25px;
+    background: linear-gradient(to right, #fff, var(--accent-estudio), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineEstudio 8s linear infinite;
+}
+
+@keyframes shineEstudio { to { background-position: 200% center; } }
+
+.category-header-estudio::after {
+    content: ""; position: absolute; bottom: 50px;
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--accent-estudio), transparent);
+    animation: scrollMoveEstudio 2s ease-in-out infinite;
+}
+
+@keyframes scrollMoveEstudio {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+}
+
+/* =========================================
+   4. GRILLA DE PROYECTOS (ESTUDIO.HTML)
+   ========================================= */
+.projects-grid-urbano { /* Mantenemos el nombre de la clase para no romper el HTML */
+    display: grid; grid-template-columns: 1fr;
+    gap: 100px; padding: 100px 8%;
+    max-width: 1800px; margin: 0 auto;
+}
+
+.project-card-urbano {
+    position: relative; overflow: hidden;
+    background: #000; transition: var(--transition-smooth);
+    border: 1px solid rgba(0, 212, 255, 0.05);
+}
+
+.project-card-urbano a { text-decoration: none; }
+
+.image-wrapper-urbano { height: 750px; overflow: hidden; }
+.image-wrapper-urbano img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.5) saturate(0.8); transition: var(--transition-smooth);
+}
+
+.project-card-urbano:hover { transform: translateY(-10px); border-color: var(--accent-estudio); box-shadow: var(--estudio-glow); }
+.project-card-urbano:hover img { filter: brightness(0.9) saturate(1); transform: scale(1.03); }
+
+.project-label-urbano {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 60px; background: linear-gradient(to top, rgba(2, 4, 8, 1), transparent);
+}
+
+.project-label-urbano h3 { color: #fff; font-size: 2.2rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 10px; }
+.project-label-urbano .label-action { color: var(--accent-estudio); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
+
+/* =========================================
+   5. ÁLBUM DA VINCI (STREAM GRID)
+   ========================================= */
+.photo-stream-container { max-width: 1900px; margin: 0 auto; padding: 0 5% 100px; }
+.photo-group { margin-bottom: 150px; }
+
+.group-title {
+    font-size: 0.85rem; letter-spacing: 12px; text-transform: uppercase;
+    color: var(--text-dim); margin-bottom: 50px; text-align: center;
+}
+
+.stream-grid-mixed {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 35px;
+}
+
+.stream-item { overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.03); }
+.stream-item.horizontal { grid-column: span 3; }
+.stream-item.vertical { grid-column: span 3; } /* Al ser solo 2 verticales, usamos span 3 para que ocupen media pantalla cada una */
+
+.stream-item img {
+    width: 100%; height: auto; display: block;
+    filter: brightness(0.7); transition: var(--transition-smooth);
+}
+
+.stream-item:hover img { filter: brightness(1.1); transform: scale(1.06); }
+.stream-item:hover { border-color: var(--accent-estudio); box-shadow: var(--estudio-glow); z-index: 10; }
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.navigation-footer { display: flex; justify-content: center; padding: 120px 0; }
+.btn-back {
+    padding: 20px 60px; border: 1px solid rgba(0, 212, 255, 0.2);
+    color: var(--text-dim); text-decoration: none;
+    text-transform: uppercase; letter-spacing: 5px;
+    transition: var(--transition-smooth);
+}
+.btn-back:hover { border-color: var(--accent-estudio); color: #fff; background: rgba(0, 212, 255, 0.05); }
