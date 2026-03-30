@@ -1,0 +1,248 @@
+/* =========================================
+   1. VARIABLES Y RESET (VERDE ESMERALDA)
+   ========================================= */
+:root {
+    --bg-dark: #030504;
+    --accent: #2ecc71; 
+    --text: #ffffff;
+    --dim: rgba(255, 255, 255, 0.4);
+    --neon: 0 0 30px rgba(46, 204, 113, 0.2);
+    --transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR FIJA (UNIFICADA)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 30px 6%; /* Volvemos al padding estándar */
+    background: rgba(3, 5, 4, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex; 
+    justify-content: flex-end; /* Alineado a la derecha como Tandil/CABA */
+    align-items: center;
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none; 
+    color: var(--dim);
+    font-size: 0.75rem; /* Tamaño estándar de tu portfolio */
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    font-weight: 800; /* Negrita consistente */
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent); 
+    text-shadow: var(--neon);
+}
+
+/* =========================================
+   3. CABECERA (PROPORCIONES ESTÁNDAR)
+   ========================================= */
+.album-header-especifico {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 10%;
+}
+
+.album-header-especifico h1 {
+    font-size: clamp(3.5rem, 12vw, 7.5rem); /* Volvemos al tamaño de CABA */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 25px; 
+    margin-left: 25px; /* Centrado óptico */
+    background: linear-gradient(to right, #fff, var(--accent), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineNature 8s linear infinite;
+}
+
+.album-header-especifico p {
+    color: var(--accent);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+/* =========================================
+   3. CABECERA DE IMPACTO (BARRERA DE ENTRADA)
+   ========================================= */
+.album-header-especifico {
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 10%;
+}
+
+.album-header-especifico h1 {
+    font-size: clamp(3rem, 10vw, 6.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 25px;
+    /* Animación de brillo infinito */
+    background: linear-gradient(to right, #fff, var(--accent), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineNature 8s linear infinite;
+}
+
+@keyframes shineNature {
+    to { background-position: 200% center; }
+}
+
+.album-header-especifico p {
+    color: var(--accent);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+/* FLECHA INDICADORA DE SCROLL */
+.album-header-especifico::after {
+    content: "";
+    position: absolute;
+    bottom: 60px;
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+    0% { transform: scaleY(0); opacity: 0; transform-origin: top; }
+    50% { transform: scaleY(1); opacity: 1; transform-origin: top; }
+    100% { transform: scaleY(0); opacity: 0; transform-origin: bottom; }
+}
+
+/* =========================================
+   4. GRILLA DE FOTOS (SCROLL HACIA ABAJO)
+   ========================================= */
+.photo-stream-container {
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.photo-group { margin-bottom: 120px; }
+
+.group-title {
+    font-size: 0.8rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.stream-grid-mixed {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.stream-item { 
+    overflow: hidden; 
+    background: #000;
+    position: relative;
+}
+
+.stream-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+    transition: var(--transition);
+}
+
+/* Configuración de celdas */
+.stream-item.horizontal { 
+    grid-column: span 3; 
+    aspect-ratio: 16 / 9; 
+}
+
+.stream-item.vertical { 
+    grid-column: span 2; 
+    aspect-ratio: 2 / 3; 
+}
+
+/* Efectos Hover */
+.stream-item:hover img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.stream-item:hover {
+    box-shadow: var(--neon);
+    z-index: 10;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.navigation-footer {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.btn-back {
+    padding: 20px 60px;
+    border: 1px solid #222;
+    color: var(--dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(46, 204, 113, 0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .stream-grid-mixed { grid-template-columns: repeat(2, 1fr); }
+    .stream-item.horizontal, .stream-item.vertical { 
+        grid-column: span 2; 
+    }
+    .album-header-especifico h1 { letter-spacing: 10px; }
+}

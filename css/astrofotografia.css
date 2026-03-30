@@ -1,0 +1,201 @@
+/* =========================================
+   1. VARIABLES (AZUL CÓSMICO & VIOLETA)
+   ========================================= */
+:root {
+    --bg-space: #02040a; /* Negro azulado profundo */
+    --accent-space: #4b7bec; /* Azul eléctrico / Estelar */
+    --accent-nebula: #a55eea; /* Violeta nebulosa para detalles */
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.4);
+    --space-neon: 0 0 30px rgba(75, 123, 236, 0.3);
+    --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-space);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR (CON NEGRITA Y BLUR)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 30px 5%;
+    background: rgba(2, 4, 10, 0.85);
+    backdrop-filter: blur(20px);
+    display: flex; justify-content: flex-end;
+}
+
+.nav-links { list-style: none; display: flex; gap: 40px; }
+.nav-links a {
+    text-decoration: none; 
+    color: var(--text-dim);
+    font-size: 0.75rem; 
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    font-weight: 800; /* Negrita consistente */
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent-space); 
+    text-shadow: 0 0 15px var(--accent-space);
+}
+
+/* =========================================
+   3. CABECERA (ANIMACIÓN CÓSMICA)
+   ========================================= */
+.album-header-especifico {
+    height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    position: relative;
+}
+
+.album-header-especifico h1 {
+    font-size: clamp(3.5rem, 12vw, 7.5rem);
+    font-weight: 900;
+    letter-spacing: 35px;
+    text-transform: uppercase;
+    /* Gradiente: Blanco -> Azul -> Violeta -> Blanco */
+    background: linear-gradient(to right, #fff, var(--accent-space), var(--accent-nebula), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineSpace 7s linear infinite;
+}
+
+@keyframes shineSpace {
+    to { background-position: 200% center; }
+}
+
+.album-header-especifico p {
+    color: var(--accent-space);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-top: 25px;
+}
+
+/* Flecha de Scroll (Estilo Cometa) */
+.album-header-especifico::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    width: 1px;
+    height: 70px;
+    background: linear-gradient(to bottom, var(--accent-space), var(--accent-nebula), transparent);
+    animation: spaceScroll 2.5s infinite;
+}
+
+@keyframes spaceScroll {
+    0% { transform: scaleY(0); opacity: 0; transform-origin: top; }
+    50% { transform: scaleY(1); opacity: 1; }
+    100% { transform: scaleY(0); opacity: 0; transform-origin: bottom; }
+}
+
+/* =========================================
+   4. GRILLA DE FOTOS
+   ========================================= */
+.photo-stream-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.photo-group { margin-bottom: 120px; }
+
+.group-title {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 800;
+    margin-bottom: 35px;
+    border-left: 4px solid var(--accent-space);
+    padding-left: 20px;
+}
+
+.stream-grid-mixed {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 35px; /* Más aire para que las fotos "floten" */
+}
+
+.stream-item { 
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(75, 123, 236, 0.1);
+    transition: var(--transition);
+}
+
+.stream-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85) contrast(1.1); /* Realce de estrellas */
+    transition: var(--transition);
+}
+
+/* Proporciones Horizontales y Verticales */
+.stream-item.horizontal { 
+    grid-column: span 3; 
+    aspect-ratio: 16 / 9; 
+}
+
+.stream-item.vertical { 
+    grid-column: span 2; 
+    aspect-ratio: 2 / 3; 
+}
+
+.stream-item:hover img {
+    filter: brightness(1.1) contrast(1.2);
+    transform: scale(1.03);
+}
+
+.stream-item:hover {
+    box-shadow: 0 0 40px rgba(75, 123, 236, 0.2);
+    border-color: var(--accent-nebula);
+    z-index: 5;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.navigation-footer {
+    display: flex; justify-content: center;
+    padding: 100px 0;
+}
+
+.btn-back {
+    padding: 20px 60px;
+    border: 1px solid #1a1a1a;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 5px;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    border-color: var(--accent-space);
+    color: #fff;
+    background: rgba(75, 123, 236, 0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .stream-grid-mixed { grid-template-columns: repeat(2, 1fr); }
+    .stream-item.horizontal, .stream-item.vertical { grid-column: span 2; }
+    .album-header-especifico h1 { letter-spacing: 15px; }
+}

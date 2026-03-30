@@ -5,7 +5,7 @@
     --bg-dark: #050505;
     --accent-red: #d30000;         
     --text-main: #ffffff;
-    --text-dim: rgba(255, 255, 255, 0.5);
+    --text-dim: rgba(255, 255, 255, 0.5); 
     --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     --border-soft: rgba(255, 255, 255, 0.05);
 }
@@ -61,7 +61,7 @@ body {
 }
 
 /* =========================================
-   3. SECCIÓN HERO (BYFOOGLESFRAMES - FIX)
+   3. SECCIÓN HERO (BYFOOGLESFRAMES - ANIMADO)
    ========================================= */
 .hero {
     height: 100vh;
@@ -79,23 +79,38 @@ body {
 }
 
 .brand-title {
-    /* Ajustado para que 15 letras + espacios entren en pantalla */
     font-size: clamp(1.5rem, 6.5vw, 5rem); 
     font-weight: 900;
-    /* Reducido de 25px a un rango más real para evitar desborde */
     letter-spacing: clamp(5px, 1.5vw, 15px); 
     text-transform: uppercase;
     margin-bottom: 25px;
     width: 100%;
     display: inline-block;
     
-    /* Degradado y Corrección de error */
-    background: linear-gradient(to right, #ffffff, #666666);
+    /* Configuración de la animación lumínica */
+    background: linear-gradient(
+        to right, 
+        #ffffff 0%, 
+        #666666 25%, 
+        #ffffff 50%, 
+        #666666 75%, 
+        #ffffff 100%
+    );
+    background-size: 200% auto; /* Necesario para que el gradiente "corra" */
     -webkit-background-clip: text;
     background-clip: text; 
     -webkit-text-fill-color: transparent;
     
+    /* Animación: 8 segundos para que sea suave y no distraiga */
+    animation: shineMain 8s linear infinite;
     padding: 10px 0;
+}
+
+/* Definición del movimiento de la luz */
+@keyframes shineMain {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .brand-tagline {
@@ -104,22 +119,6 @@ body {
     text-transform: uppercase;
     letter-spacing: clamp(4px, 1vw, 8px);
     margin-bottom: 50px;
-}
-
-.btn-primary {
-    padding: 18px 45px;
-    border: 1px solid var(--text-dim);
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    transition: var(--transition);
-}
-
-.btn-primary:hover {
-    background: var(--text-main);
-    color: #000;
 }
 
 /* =========================================

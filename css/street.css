@@ -1,0 +1,202 @@
+/* =========================================
+   1. VARIABLES (NARANJA INDUSTRIAL INTENSO)
+   ========================================= */
+:root {
+    --bg-street: #030303;
+    /* Naranja más saturado y fuerte para diferenciarlo de Urbano */
+    --accent-street: #ff6600; 
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.4);
+    --street-neon: 0 0 35px rgba(255, 102, 0, 0.4);
+    --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-street);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR (CORREGIDA CON NEGRITA)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 30px 5%;
+    background: rgba(3, 3, 3, 0.9);
+    backdrop-filter: blur(15px);
+    display: flex; justify-content: flex-end;
+}
+
+.nav-links { list-style: none; display: flex; gap: 40px; }
+
+.nav-links a {
+    text-decoration: none; 
+    color: var(--text-dim);
+    font-size: 0.75rem; 
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    /* Ajuste de peso para que no sean delgadas */
+    font-weight: 800; 
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent-street); 
+    text-shadow: var(--street-neon);
+}
+
+/* =========================================
+   3. CABECERA (BARRERA DE ENTRADA)
+   ========================================= */
+.album-header-especifico {
+    height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.album-header-especifico h1 {
+    font-size: clamp(3.5rem, 12vw, 7.5rem);
+    font-weight: 900;
+    letter-spacing: 30px;
+    text-transform: uppercase;
+    /* Brillo Naranja Fuerte */
+    background: linear-gradient(to right, #fff, var(--accent-street), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineStreet 5s linear infinite;
+}
+
+@keyframes shineStreet {
+    to { background-position: 200% center; }
+}
+
+.album-header-especifico p {
+    color: var(--accent-street);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+/* Indicador de Scroll */
+.album-header-especifico::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    width: 3px;
+    height: 70px;
+    background: var(--accent-street);
+    box-shadow: var(--street-neon);
+    animation: streetScroll 2s infinite;
+}
+
+@keyframes streetScroll {
+    0% { transform: scaleY(0); opacity: 0; transform-origin: top; }
+    50% { transform: scaleY(1); opacity: 1; }
+    100% { transform: scaleY(0); opacity: 0; transform-origin: bottom; }
+}
+
+/* =========================================
+   4. GRILLA DE FOTOS
+   ========================================= */
+.photo-stream-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.photo-group { margin-bottom: 120px; }
+
+.group-title {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 800;
+    margin-bottom: 35px;
+    border-left: 4px solid var(--accent-street);
+    padding-left: 20px;
+}
+
+.stream-grid-mixed {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.stream-item { 
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+}
+
+.stream-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+    transition: var(--transition);
+}
+
+.stream-item.horizontal { 
+    grid-column: span 3; 
+    aspect-ratio: 16 / 9; 
+}
+
+.stream-item.vertical { 
+    grid-column: span 2; 
+    aspect-ratio: 2 / 3; 
+}
+
+.stream-item:hover img {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+.stream-item:hover {
+    box-shadow: var(--street-neon);
+    outline: 1px solid var(--accent-street);
+    z-index: 5;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.navigation-footer {
+    display: flex; justify-content: center;
+    padding: 100px 0;
+}
+
+.btn-back {
+    padding: 20px 60px;
+    border: 1px solid #333;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 5px;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    border-color: var(--accent-street);
+    color: #fff;
+    background: rgba(255, 102, 0, 0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .stream-grid-mixed { grid-template-columns: repeat(2, 1fr); }
+    .stream-item.horizontal, .stream-item.vertical { grid-column: span 2; }
+}

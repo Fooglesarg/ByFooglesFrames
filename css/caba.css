@@ -1,0 +1,196 @@
+/* =========================================
+   1. VARIABLES (ORO URBANO)
+   ========================================= */
+:root {
+    --bg-urbano: #020202;
+    --accent-gold: #ffcc00; 
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.4);
+    --gold-neon: 0 0 35px rgba(255, 204, 0, 0.3);
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-urbano);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVBAR (ESTILO REFORZADO)
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    padding: 40px 6%;
+    background: linear-gradient(to bottom, rgba(2,2,2,1) 0%, rgba(2,2,2,0) 100%);
+    display: flex; justify-content: flex-end;
+}
+
+.nav-links { list-style: none; display: flex; gap: 45px; }
+.nav-links a {
+    text-decoration: none; 
+    color: var(--text-dim);
+    font-size: 0.7rem; 
+    letter-spacing: 5px; 
+    text-transform: uppercase;
+    font-weight: 800; /* Negrita para que no sea delgada */
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent-gold); 
+    text-shadow: var(--gold-neon);
+}
+
+/* =========================================
+   3. CABECERA (BARRERA DE ENTRADA)
+   ========================================= */
+.album-header-especifico {
+    height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    position: relative;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.album-header-especifico h1 {
+    font-size: clamp(4rem, 15vw, 9rem);
+    font-weight: 900;
+    letter-spacing: 40px; /* Espaciado amplio como en Tandil */
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, var(--accent-gold), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineGold 6s linear infinite;
+    margin-left: 40px; /* Compensa el letter-spacing para centrar visualmente */
+}
+
+@keyframes shineGold {
+    to { background-position: 200% center; }
+}
+
+.album-header-especifico p {
+    color: var(--text-main);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
+/* LA FLECHA (INDICADOR DE SCROLL) */
+.album-header-especifico::after {
+    content: "";
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--accent-gold), transparent);
+    animation: scrollLine 2.5s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+}
+
+@keyframes scrollLine {
+    0% { transform: translateX(-50%) scaleY(0); opacity: 0; transform-origin: top; }
+    50% { transform: translateX(-50%) scaleY(1); opacity: 1; }
+    100% { transform: translateX(-50%) scaleY(0); opacity: 0; transform-origin: bottom; }
+}
+
+/* =========================================
+   4. GRILLA Y GRUPOS (ESTILO LIMPIO)
+   ========================================= */
+.photo-stream-container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.photo-group { 
+    padding: 0 6% 120px; 
+}
+
+.group-title {
+    font-size: 0.75rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-align: center; /* Centrado para que no choque con los bordes */
+    display: block;
+    width: 100%;
+}
+
+.stream-grid-mixed {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+}
+
+.stream-item { 
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+}
+
+.stream-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8);
+    transition: var(--transition);
+}
+
+/* LÓGICA DE ESPACIOS */
+.stream-item.panoramic {
+    grid-column: span 6;
+    aspect-ratio: 21 / 9;
+    margin-bottom: 20px;
+}
+
+.stream-item.horizontal {
+    grid-column: span 3;
+    aspect-ratio: 16 / 9;
+}
+
+.stream-item:hover img {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+.stream-item:hover {
+    box-shadow: var(--gold-neon);
+    outline: 1px solid var(--accent-gold);
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.navigation-footer {
+    display: flex; justify-content: center;
+    padding-bottom: 100px;
+}
+
+.btn-back {
+    padding: 20px 60px;
+    border: 1px solid #222;
+    color: var(--text-dim);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 5px;
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    border-color: var(--accent-gold);
+    color: #fff;
+}
