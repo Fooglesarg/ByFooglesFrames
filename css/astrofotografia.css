@@ -2,9 +2,9 @@
    1. VARIABLES (AZUL CÓSMICO & VIOLETA)
    ========================================= */
 :root {
-    --bg-space: #02040a; /* Negro azulado profundo */
-    --accent-space: #4b7bec; /* Azul eléctrico / Estelar */
-    --accent-nebula: #a55eea; /* Violeta nebulosa para detalles */
+    --bg-space: #02040a; 
+    --accent-space: #4b7bec; 
+    --accent-nebula: #a55eea; 
     --text-main: #ffffff;
     --text-dim: rgba(255, 255, 255, 0.4);
     --space-neon: 0 0 30px rgba(75, 123, 236, 0.3);
@@ -21,7 +21,7 @@ body {
 }
 
 /* =========================================
-   2. NAVBAR (CON NEGRITA Y BLUR)
+   2. NAVBAR
    ========================================= */
 .navbar {
     position: fixed;
@@ -29,6 +29,7 @@ body {
     padding: 30px 5%;
     background: rgba(2, 4, 10, 0.85);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: flex; justify-content: flex-end;
 }
 
@@ -39,7 +40,7 @@ body {
     font-size: 0.75rem; 
     letter-spacing: 4px; 
     text-transform: uppercase;
-    font-weight: 800; /* Negrita consistente */
+    font-weight: 800; 
     transition: var(--transition);
 }
 
@@ -51,19 +52,20 @@ body {
 /* =========================================
    3. CABECERA (ANIMACIÓN CÓSMICA)
    ========================================= */
-.album-header-especifico {
+.category-header-astro, .album-header-especifico {
     height: 100vh;
     display: flex; flex-direction: column;
     justify-content: center; align-items: center;
     position: relative;
+    text-align: center;
 }
 
-.album-header-especifico h1 {
+.category-header-astro h1, .album-header-especifico h1 {
     font-size: clamp(3.5rem, 12vw, 7.5rem);
     font-weight: 900;
     letter-spacing: 35px;
+    margin-left: 35px;
     text-transform: uppercase;
-    /* Gradiente: Blanco -> Azul -> Violeta -> Blanco */
     background: linear-gradient(to right, #fff, var(--accent-space), var(--accent-nebula), #fff);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -76,7 +78,7 @@ body {
     to { background-position: 200% center; }
 }
 
-.album-header-especifico p {
+.category-header-astro p, .album-header-especifico p {
     color: var(--accent-space);
     letter-spacing: 12px;
     text-transform: uppercase;
@@ -85,8 +87,8 @@ body {
     margin-top: 25px;
 }
 
-/* Flecha de Scroll (Estilo Cometa) */
-.album-header-especifico::after {
+/* Flecha de Scroll */
+.category-header-astro::after, .album-header-especifico::after {
     content: "";
     position: absolute;
     bottom: 50px;
@@ -103,7 +105,79 @@ body {
 }
 
 /* =========================================
-   4. GRILLA DE FOTOS
+   4. LANDING DE CATEGORÍA (TARJETAS) - NUEVO
+   ========================================= */
+.category-main {
+    padding-bottom: 100px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.project-card .image-wrapper {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.6);
+    transition: var(--transition);
+}
+
+.project-label {
+    padding: 30px;
+    background: linear-gradient(to top, #000, transparent);
+    position: absolute;
+    bottom: 0; width: 100%;
+}
+
+.label-action {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-space);
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    letter-spacing: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* Hover Cards */
+.project-card:hover {
+    border-color: var(--accent-space);
+    box-shadow: var(--space-neon);
+    transform: translateY(-5px);
+}
+
+.project-card:hover img {
+    filter: grayscale(0%) brightness(0.9);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   5. GRILLA DE FOTOS (ALBUMES FINALES)
    ========================================= */
 .photo-stream-container {
     max-width: 1800px;
@@ -127,7 +201,7 @@ body {
 .stream-grid-mixed {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 35px; /* Más aire para que las fotos "floten" */
+    gap: 35px;
 }
 
 .stream-item { 
@@ -142,20 +216,12 @@ body {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.85) contrast(1.1); /* Realce de estrellas */
+    filter: brightness(0.85) contrast(1.1);
     transition: var(--transition);
 }
 
-/* Proporciones Horizontales y Verticales */
-.stream-item.horizontal { 
-    grid-column: span 3; 
-    aspect-ratio: 16 / 9; 
-}
-
-.stream-item.vertical { 
-    grid-column: span 2; 
-    aspect-ratio: 2 / 3; 
-}
+.stream-item.horizontal { grid-column: span 3; aspect-ratio: 16 / 9; }
+.stream-item.vertical { grid-column: span 2; aspect-ratio: 2 / 3; }
 
 .stream-item:hover img {
     filter: brightness(1.1) contrast(1.2);
@@ -169,7 +235,7 @@ body {
 }
 
 /* =========================================
-   5. FOOTER
+   6. FOOTER
    ========================================= */
 .navigation-footer {
     display: flex; justify-content: center;
@@ -195,7 +261,40 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: 1fr; }
     .stream-grid-mixed { grid-template-columns: repeat(2, 1fr); }
     .stream-item.horizontal, .stream-item.vertical { grid-column: span 2; }
-    .album-header-especifico h1 { letter-spacing: 15px; }
+    .album-header-especifico h1, .category-header-astro h1 { letter-spacing: 15px; margin-left: 15px; }
+}
+
+/* =========================================
+   MODAL LIGHTBOX (IMAGEN EXPANDIDA)
+   ========================================= */
+.lightbox-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-modal.active img {
+    transform: scale(1);
 }

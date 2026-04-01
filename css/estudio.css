@@ -148,3 +148,35 @@ body {
     transition: var(--transition-smooth);
 }
 .btn-back:hover { border-color: var(--accent-estudio); color: #fff; background: rgba(0, 212, 255, 0.05); }
+
+/* =========================================
+   MODAL LIGHTBOX (IMAGEN EXPANDIDA)
+   ========================================= */
+.lightbox-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-modal.active img {
+    transform: scale(1);
+}
