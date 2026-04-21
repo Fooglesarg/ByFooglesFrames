@@ -108,17 +108,31 @@ body {
 .category-header-social::after {
     content: "";
     position: absolute;
-    bottom: 50px;
+    /* Bajamos la posición inicial */
+    bottom: 30px; 
+    /* Le damos un margen superior respecto al tagline si es necesario */
+    margin-top: 80px; 
     width: 1px;
     height: 60px;
     background: linear-gradient(to bottom, var(--accent-social), var(--accent-glow), transparent);
     animation: scrollMoveSocial 2s ease-in-out infinite;
 }
 
+/* Ajustamos el Tagline para empujar el contenido hacia arriba */
+.category-tagline {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-size: 0.8rem;
+    margin-top: 40px;
+    margin-bottom: 100px; /* Añadimos este margen para separar el texto de la flecha */
+    max-width: 800px;
+}
+
 @keyframes scrollMoveSocial {
     0% { transform: translateY(0); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(30px); opacity: 0; } /* Aumentamos el recorrido para que sea más fluido */
 }
 
 /* =========================================
@@ -198,7 +212,8 @@ body {
 
 .stream-grid-mixed {
     display: grid; grid-template-columns: repeat(6, 1fr); 
-    gap: 50px 30px; align-items: start;
+    gap: 40px 30px; 
+    align-items: center;
 }
 
 .stream-item img {
@@ -270,4 +285,32 @@ body {
 
 .lightbox-modal.active img {
     transform: scale(1);
+}
+
+/* =========================================
+   7. TÍTULOS DE SECCIÓN ESTILO GALERÍA
+   ========================================= */
+
+.photo-group {
+    margin-bottom: 140px; /* Mucho aire entre grupos */
+}
+
+.group-title {
+    font-size: 0.75rem; /* Pequeño pero imponente */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 15px; /* El secreto del look premium */
+    color: var(--text-dim); /* Un blanco sutil, no tan brillante */
+    text-align: center; /* Centrado como en tu imagen */
+    margin-bottom: 70px; /* Espacio generoso hacia las fotos */
+    display: block;
+    width: 100%;
+}
+
+/* Alineación de la grilla */
+.stream-grid-mixed {
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 40px 30px; 
+    align-items: center;
 }
