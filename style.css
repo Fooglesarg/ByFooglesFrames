@@ -256,6 +256,67 @@ body {
 /* =========================================
    6. FOOTER
    ========================================= */
+
+/* SECCIÓN CONTENEDORA */
+.commercial-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* TARJETA TIPO BANNER */
+.commercial-card {
+    background-color: #080d16; /* Fondo azul/oscuro profundo */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borde sutil */
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commercial-card:hover {
+    border-color: rgba(56, 189, 248, 0.25); /* Glow sutil en hover */
+}
+
+/* TEXTO PREGUNTA */
+.commercial-text {
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+/* ENLACE EN MAYÚSCULAS CON COLOR CYAN */
+.commercial-btn {
+    color: #e01b1b; /* Color cyan / celeste brillante */
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.commercial-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.commercial-btn i {
+    font-size: 0.8rem;
+}
+   
 .main-footer {
     padding: 100px 0 60px;
     background-color: #020202;
