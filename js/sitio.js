@@ -13,7 +13,7 @@ const conMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     if (!canvas || menosMovimiento) return;
     const ctx = canvas.getContext('2d');
     const hero = canvas.parentElement;
-    const colores = ['255, 179, 71', '255, 111, 79', '232, 64, 94', '255, 213, 154'];
+    const colores = ['247, 161, 181', '227, 36, 92', '190, 26, 72', '255, 211, 220'];
     let ancho, alto, luces = [], visible = true, animando = false;
     const mouse = { x: -9999, y: -9999 };
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
