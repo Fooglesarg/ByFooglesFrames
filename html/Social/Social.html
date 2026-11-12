@@ -2,61 +2,99 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Social | ByFooglesFrames</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/social.css">
-    <link rel="icon" type="image/png" href="/icono.png">
-</head>
-<body class="category-social">
+    <meta name="description" content="Social: La atmósfera de la noche y el pulso urbano.">
+    <meta name="author" content="Facundo N. Delgado Ojeda">
+    <meta name="theme-color" content="#0b0807">
+    <link rel="canonical" href="https://byfooglesframes.com/html/Social/Social.html">
 
-    <header class="navbar">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../../index.html#galeria">Categorías</a></li>
-            </ul>
-        </nav>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ByFooglesFrames">
+    <meta property="og:title" content="Social | ByFooglesFrames">
+    <meta property="og:description" content="Social: La atmósfera de la noche y el pulso urbano.">
+    <meta property="og:url" content="https://byfooglesframes.com/html/Social/Social.html">
+    <meta property="og:image" content="https://byfooglesframes.com/images/Social/TokyoStream/19.webp">
+
+    <link rel="icon" type="image/png" href="../../icono.png">
+
+    <!-- Tipografías (no bloquean la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Íconos: se cargan después del contenido para no frenar la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <!-- Marca que hay JS para activar las animaciones de aparición (sin JS todo se ve igual) -->
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="../../css/sitio.css">
+    <script src="../../js/sitio.js" defer></script>
+</head>
+<body>
+
+    <div class="progreso" aria-hidden="true"></div>
+    <div class="luz-cursor" aria-hidden="true"></div>
+
+    <header class="nav solida">
+        <div class="nav-caja">
+            <a href="../../index.html" class="marca">ByFoogles<span>Frames</span></a>
+            <button class="nav-boton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span>
+            </button>
+            <nav aria-label="Principal">
+                <ul class="nav-links" id="menu">
+                    <li><a href="../../index.html#galeria">Categorías</a></li>
+                    <li><a href="../../index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="../../index.html#contacto">Contacto</a></li>
+                    <li><a href="https://byfooglesvisuals.com" target="_blank" rel="noopener" class="nav-cta">Servicios</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="social-main-content">
-        
-        <section class="category-header-social">
-            <h1>SOCIAL</h1>
-            <p class="category-tagline">La atmósfera de la noche y el pulso urbano.</p>
+    <main>
+        <section class="cabecera">
+            <div class="cabecera-fondo" style="background-image:url('../../images/Social/TokyoStream/19-mini.webp')" aria-hidden="true"></div>
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+            <nav aria-label="Ubicación"><ol class="migas"><li><a href="../../index.html">Inicio</a></li><li><span aria-current="page">Social</span></li></ol></nav>
+            <h1><span class="degradado">Social</span></h1>
+            <p class="cabecera-texto">La atmósfera de la noche y el pulso urbano.</p>
+            <div class="cabecera-info"><span class="chip"><i class="fa-solid fa-martini-glass-citrus"></i> 2 álbumes</span><span class="chip"><i class="fa-solid fa-images"></i> 73 fotos</span></div>
         </section>
 
-        <section class="projects-grid-social">
-            
-            <div class="project-card-social">
-                <a href="TokyoStream.html">
-                    <div class="image-wrapper-social">
-                        <img src="../../images/Social/TokyoStream/intro.jpg" alt="Tokyo Stream">
-                    </div>
-                    <div class="project-label-social">
-                        <h3>Tokyo Stream</h3>
-                        <p class="label-action">Explorar Álbum</p>
-                    </div>
+        <section class="contenido">
+            <div class="mosaico">
+                <a href="TokyoStream.html" class="tarjeta foco aparecer ">
+                    <div class="tarjeta-foto" style="background-image:url('../../images/Social/TokyoStream/intro-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-cantidad">49 fotos</span>
+                    <h3>Tokyo Stream</h3>
+                    <p>Cultura, movimiento y el flujo de la fiesta más manija de Buenos Aires.</p>
+                    <span class="tarjeta-ir">Ver álbum <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="TokyoNight.html" class="tarjeta foco aparecer ">
+                    <div class="tarjeta-foto" style="background-image:url('../../images/Social/TokyoNight/intro-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-cantidad">24 fotos</span>
+                    <h3>Tokyo Night</h3>
+                    <p>La magia de la vida nocturna cordobesa y su picante recibimiento.</p>
+                    <span class="tarjeta-ir">Ver álbum <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
-
-            <div class="project-card-social">
-                <a href="TokyoNight.html">
-                    <div class="image-wrapper-social">
-                        <img src="../../images/Social/TokyoNight/intro.jpg" alt="Tokyo Night">
-                    </div>
-                    <div class="project-label-social">
-                        <h3>Tokyo Night</h3>
-                        <p class="label-action">Explorar Álbum</p>
-                    </div>
-                </a>
+            <div class="otros aparecer">
+                <h2>Otras categorías</h2><div class="otros-lista"><a class="chip" href="../Estudio/Estudio.html"><i class="fa-solid fa-camera-retro"></i> Estudio</a><a class="chip" href="../Street/Street.html"><i class="fa-solid fa-person-walking"></i> Street</a><a class="chip" href="../PaisajeUrbano/PaisajeUrban.html"><i class="fa-solid fa-city"></i> Paisaje Urbano</a><a class="chip" href="../Paisaje/Paisaje.html"><i class="fa-solid fa-mountain-sun"></i> Paisaje</a><a class="chip" href="../Astrofotografia/Astrofotografia.html"><i class="fa-solid fa-star"></i> Astrofotografía</a></div>
+                <a href="../../index.html#galeria" class="boton boton-vidrio"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
             </div>
-
         </section>
     </main>
 
-    <footer class="navigation-footer">
-        <a href="../../index.html#galeria" class="btn-back">Volver al inicio</a>
+    <footer class="pie">
+        <div class="pie-gigante" aria-hidden="true">ByFooglesFrames</div>
+        <div class="pie-redes">
+            <a href="https://wa.me/5491135634438?text=Hola!%20Quisiera%20consultar%20por%20un%20servicio%20fotogr%C3%A1fico" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/byfoogles.frames" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:byfooglesframes@gmail.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 ByFooglesFrames · Facundo N. Delgado Ojeda. Todos los derechos reservados.</p>
     </footer>
 
 </body>

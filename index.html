@@ -2,180 +2,196 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ByFooglesFrames | Fotografía</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="/icono.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ByFooglesFrames | Fotografía de Facundo N. Delgado Ojeda</title>
+    <meta name="description" content="Portfolio de fotografía de Facundo N. Delgado Ojeda: social, estudio, street, paisaje urbano, paisaje y astrofotografía en Argentina.">
+    <meta name="author" content="Facundo N. Delgado Ojeda">
+    <meta name="theme-color" content="#0b0807">
+    <link rel="canonical" href="https://byfooglesframes.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ByFooglesFrames">
+    <meta property="og:title" content="ByFooglesFrames | Fotografía de Facundo N. Delgado Ojeda">
+    <meta property="og:description" content="Portfolio de fotografía de Facundo N. Delgado Ojeda: social, estudio, street, paisaje urbano, paisaje y astrofotografía en Argentina.">
+    <meta property="og:url" content="https://byfooglesframes.com/">
+    <meta property="og:image" content="https://byfooglesframes.com/images/Social/TokyoStream/19.webp">
+
+    <link rel="icon" type="image/png" href="icono.png">
+
+    <!-- Tipografías (no bloquean la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Íconos: se cargan después del contenido para no frenar la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <!-- Marca que hay JS para activar las animaciones de aparición (sin JS todo se ve igual) -->
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="css/sitio.css">
+    <script src="js/sitio.js" defer></script>
 </head>
 <body>
 
-    <header class="navbar">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#galeria">Galería</a></li> 
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+    <div class="progreso" aria-hidden="true"></div>
+    <div class="luz-cursor" aria-hidden="true"></div>
+
+    <header class="nav">
+        <div class="nav-caja">
+            <a href="#inicio" class="marca">ByFoogles<span>Frames</span></a>
+            <button class="nav-boton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span>
+            </button>
+            <nav aria-label="Principal">
+                <ul class="nav-links" id="menu">
+                    <li><a href="#galeria">Categorías</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://byfooglesvisuals.com" target="_blank" rel="noopener" class="nav-cta">Servicios</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="hero-container">
-                <h1 class="brand-title">ByFooglesFrames</h1>
-                <p class="brand-tagline">Explora el mundo a través de mis ojos.</p>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="inicio">
+            <div class="hero-fotos" aria-hidden="true">
+                <div style="background-image:url('images/Social/TokyoStream/19.webp')"></div><div data-foto="images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2819%29.webp"></div><div data-foto="images/Estudio/UADE/1%20%282%29.webp"></div><div data-foto="images/Astrofotografia/Cosmos/2%20%282%29.webp"></div>
+            </div>
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+            <canvas class="hero-particulas" aria-hidden="true"></canvas>
+            <div class="visor-camara" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+                <span class="visor-foco"></span>
+                <div class="visor-datos"><span><b>●</b> REC</span><span>ISO 400</span><span>f/1.8</span><span class="opcional">1/125 s</span><span class="opcional">RAW</span></div>
+            </div>
+
+            <div class="hero-contenido">
+                <span class="pastilla"><span class="punto"></span> Portfolio de fotografía · Argentina</span>
+                <h1>
+                    <span class="linea">ByFoogles<span class="degradado">Frames</span></span>
+                </h1>
+                <p class="hero-texto">
+                    Explora el mundo a través de mis ojos:
+                    <span class="escribe" data-palabras="la energía de la noche|la luz de estudio|el pulso de la calle|la inmensidad del paisaje|el cielo nocturno">la energía de la noche</span><span class="cursor-texto" aria-hidden="true">|</span>
+                </p>
+                <div class="hero-botones">
+                    <a href="#galeria" class="boton boton-principal magnetico"><i class="fa-solid fa-images"></i> Ver categorías</a>
+                    <a href="#contacto" class="boton boton-vidrio magnetico"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
+                </div>
+            </div>
+
+            <a href="#galeria" class="hero-bajar" aria-label="Bajar a Categorías"><span></span></a>
+        </section>
+
+        <!-- ============ CINTA ============ -->
+        <div class="cinta" aria-hidden="true">
+            <div class="cinta-pista"><span>Social</span><i>✦</i><span>Estudio</span><i>✦</i><span>Street</span><i>✦</i><span>Paisaje Urbano</span><i>✦</i><span>Paisaje</span><i>✦</i><span>Astrofotografía</span><i>✦</i><span>Retrato</span><i>✦</i><span>Noche</span><i>✦</i><span>Social</span><i>✦</i><span>Estudio</span><i>✦</i><span>Street</span><i>✦</i><span>Paisaje Urbano</span><i>✦</i><span>Paisaje</span><i>✦</i><span>Astrofotografía</span><i>✦</i><span>Retrato</span><i>✦</i><span>Noche</span><i>✦</i></div>
+        </div>
+
+        <!-- ============ CATEGORÍAS ============ -->
+        <section id="galeria" class="seccion">
+            <div class="encabezado aparecer">
+                <span class="etiqueta"><i class="fa-solid fa-camera"></i> 01 — Galería</span>
+                <h2>Categorías</h2>
+                <p>305 fotografías en 15 álbumes: de la pista de baile al cielo nocturno.</p>
+            </div>
+            <div class="mosaico">
+                <a href="html/Social/Social.html" class="tarjeta foco aparecer alta">
+                    <div class="tarjeta-foto" style="background-image:url('images/Social/TokyoStream/19-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">01</span><span class="tarjeta-cantidad">73 fotos</span>
+                    <h3>Social</h3>
+                    <p>Atmósfera y pulso urbano</p>
+                    <span class="tarjeta-ir">Ver 2 álbumes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="html/Estudio/Estudio.html" class="tarjeta foco aparecer ">
+                    <div class="tarjeta-foto" style="background-image:url('images/Estudio/UADE/1%20%282%29-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">02</span><span class="tarjeta-cantidad">53 fotos</span>
+                    <h3>Estudio</h3>
+                    <p>Control de luz y escena</p>
+                    <span class="tarjeta-ir">Ver 3 álbumes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="html/Street/Street.html" class="tarjeta foco aparecer ">
+                    <div class="tarjeta-foto" style="background-image:url('images/Street/2%20%283%29-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">03</span><span class="tarjeta-cantidad">11 fotos</span>
+                    <h3>Street</h3>
+                    <p>El arte espontáneo de las calles</p>
+                    <span class="tarjeta-ir">Ver álbum <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="html/PaisajeUrbano/PaisajeUrban.html" class="tarjeta foco aparecer ancha">
+                    <div class="tarjeta-foto" style="background-image:url('images/PaisajeUrbano/intro-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">04</span><span class="tarjeta-cantidad">78 fotos</span>
+                    <h3>Paisaje Urbano</h3>
+                    <p>La arquitectura del caos</p>
+                    <span class="tarjeta-ir">Ver 4 álbumes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="html/Paisaje/Paisaje.html" class="tarjeta foco aparecer alta">
+                    <div class="tarjeta-foto" style="background-image:url('images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2819%29-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">05</span><span class="tarjeta-cantidad">82 fotos</span>
+                    <h3>Paisaje</h3>
+                    <p>Naturaleza e inmensidad</p>
+                    <span class="tarjeta-ir">Ver 3 álbumes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="html/Astrofotografia/Astrofotografia.html" class="tarjeta foco aparecer ">
+                    <div class="tarjeta-foto" style="background-image:url('images/Astrofotografia/Cosmos/2%20%282%29-mini.webp')" aria-hidden="true"></div>
+                    <span class="tarjeta-num">06</span><span class="tarjeta-cantidad">8 fotos</span>
+                    <h3>Astrofotografía</h3>
+                    <p>Cosmos y estrellas infinitas</p>
+                    <span class="tarjeta-ir">Ver 2 álbumes <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
         </section>
 
-        <section id="galeria" class="gallery-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>CATEGORÍAS</h2>
+        <!-- ============ SOBRE MÍ ============ -->
+        <section id="sobre-mi" class="seccion">
+            <div class="sobre">
+                <div class="sobre-texto aparecer">
+                    <span class="etiqueta"><i class="fa-solid fa-eye"></i> 02 — La mirada detrás</span>
+                    <h2>Facundo N. <span class="degradado">Delgado Ojeda</span></h2>
+                    <p>Fotógrafo argentino de 26 años especializado en la intersección entre la <strong>fotografía social</strong> y la precisión del <strong>estudio</strong>. Mi enfoque combina la sensibilidad del instante espontáneo con una narrativa visual técnica y pulida.</p>
+                    <p>Entiendo cada frame como una oportunidad para inmortalizar la esencia y el flujo de la luz, buscando siempre un equilibrio entre la composición y la estética moderna.</p>
                 </div>
-                
-                <div class="photo-grid">
-                    <div class="photo-item">
-                        <a href="html/Social/Social.html">
-                            <img src="images/Social/TokyoStream/19.jpg" alt="Fotografía Social">
-                            <div class="photo-info">
-                                <h3>SOCIAL</h3>
-                                <p>Atmósfera y Pulso Urbano</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="photo-item">
-                        <a href="html/Estudio/Estudio.html">
-                            <img src="images/Estudio/UADE/1 (2).jpg" alt="Fotografía de Estudio">
-                            <div class="photo-info">
-                                <h3>ESTUDIO</h3>
-                                <p>Control de luz y escena</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="photo-item">
-                        <a href="html/Street/Street.html">
-                            <img src="images/Street/2 (3).jpg" alt="Street">
-                            <div class="photo-info">
-                                <h3>STREET</h3>
-                                <p>El arte espontáneo de las calles</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="photo-item">
-                        <a href="html/PaisajeUrbano/PaisajeUrban.html">
-                            <img src="images/PaisajeUrbano/intro.jpg" alt="Paisaje Urbano">
-                            <div class="photo-info">
-                                <h3>PAISAJE URBANO</h3>
-                                <p>La arquitectura del caos</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="photo-item">
-                        <a href="html/Paisaje/Paisaje.html">
-                            <img src="images/Paisaje/San Martin de los Andes/1 (19).jpg" alt="Paisaje">
-                            <div class="photo-info">
-                                <h3>PAISAJE</h3>
-                                <p>Naturaleza e Inmensidad</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="photo-item">
-                        <a href="html/Astrofotografia/Astrofotografia.html">
-                            <img src="images/Astrofotografia/Cosmos/2 (2).jpg" alt="Astrofotografia">
-                            <div class="photo-info">
-                                <h3>ASTROFOTOGRAFIA</h3>
-                                <p>Cosmos y estrellas infinitas</p>
-                            </div>
-                        </a>
-                    </div>
+                <div class="datos">
+                    <div class="dato aparecer"><i class="fa-solid fa-crosshairs"></i><span>Enfoque</span><strong>Social &amp; Studio</strong></div>
+                    <div class="dato aparecer"><i class="fa-solid fa-camera"></i><span>Equipo</span><strong>Canon R8 System</strong></div>
+                    <div class="dato aparecer"><i class="fa-solid fa-location-dot"></i><span>Ubicación</span><strong>Argentina</strong></div>
+                    <div class="dato numero aparecer"><i class="fa-solid fa-images"></i><span>Fotos publicadas</span><strong class="degradado">305</strong></div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre-mi" class="about-section">
-            <div class="about-container">
-                <span class="about-subtitle">La mirada detrás</span>
-                <h2 class="about-title">Facundo N. Delgado Ojeda</h2>
-                
-                <div class="about-content">
-                    <p class="about-text">
-                        Fotógrafo argentino de 26 años especializado en la intersección entre la 
-                        <strong>fotografía social</strong> y la precisión del <strong>estudio</strong>. 
-                        Mi enfoque combina la sensibilidad del instante espontáneo con una narrativa 
-                        visual técnica y pulida.
-                    </p>
-                    <p class="about-text">
-                        Entiendo cada frame como una oportunidad para inmortalizar la esencia 
-                        y el flujo de la luz, buscando siempre un equilibrio entre la 
-                        composición y la estética moderna.
-                    </p>
-                </div>
+        <!-- ============ SERVICIOS ============ -->
+        <div class="banner aparecer">
+            <h3>¿Buscás fotos de <span class="degradado">retrato, eventos o producto</span>?</h3>
+            <p>Mirá los servicios comerciales en ByFoogles Visuals y pedí tu cotización desde el formulario.</p>
+            <a href="https://byfooglesvisuals.com" target="_blank" rel="noopener" class="boton boton-coral magnetico"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver servicios</a>
+        </div>
 
-                <div class="about-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Enfoque</span>
-                        <span class="spec-value">Social & Studio</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Equipo</span>
-                        <span class="spec-value">Canon R8 System</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Ubicación</span>
-                        <span class="spec-value">Argentina</span>
-                    </div>
-                </div>
+        <!-- ============ CONTACTO ============ -->
+        <section id="contacto" class="seccion">
+            <div class="encabezado aparecer">
+                <span class="etiqueta"><i class="fa-solid fa-paper-plane"></i> 03 — Contacto</span>
+                <h2>Hablemos</h2>
+                <p>Escribime por el medio que te quede más cómodo.</p>
+            </div>
+            <div class="canales">
+                <a href="https://wa.me/5491135634438?text=Hola!%20Quisiera%20consultar%20por%20un%20servicio%20fotogr%C3%A1fico" target="_blank" rel="noopener noreferrer" class="canal foco aparecer"><i class="fa-brands fa-whatsapp"></i><div><span>WhatsApp</span><strong>Enviar mensaje</strong></div></a>
+                <a href="https://instagram.com/byfoogles.frames" target="_blank" rel="noopener noreferrer" class="canal foco aparecer"><i class="fa-brands fa-instagram"></i><div><span>Instagram</span><strong>@byfoogles.frames</strong></div></a>
+                <a href="mailto:byfooglesframes@gmail.com" class="canal foco aparecer"><i class="fa-solid fa-envelope"></i><div><span>Correo</span><strong>byfooglesframes@gmail.com</strong></div></a>
             </div>
         </section>
     </main>
 
-    <section class="commercial-section">
-        <div class="commercial-card">
-            <p class="commercial-text">¿Buscás servicios de fotografía de retrato, eventos o fotoproducto?</p>
-            <p class="commercial-text">Contactame en mi página web y llena el formulario</p>
-            <a href="https://byfooglesvisuals.com" target="_blank" class="commercial-btn">
-                <span>VER SERVICIOS COMERCIALES (BYFOOGLESVISUALS)</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
+    <footer class="pie">
+        <div class="pie-gigante" aria-hidden="true">ByFooglesFrames</div>
+        <div class="pie-redes">
+            <a href="https://wa.me/5491135634438?text=Hola!%20Quisiera%20consultar%20por%20un%20servicio%20fotogr%C3%A1fico" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/byfoogles.frames" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:byfooglesframes@gmail.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
         </div>
-    </section>
-
-    <footer id="contacto" class="main-footer">
-        <div class="footer-inner">
-            <div class="footer-brand">
-                <img src="images/ByFooglesFramesLogo.jpg" alt="Logo ByFooglesFrames" class="footer-logo">
-                <span class="footer-brand-name">ByFooglesFrames</span>
-            </div>
-
-            <div class="footer-contact">
-                <a href="https://wa.me/5491135634438?text=Hola!%20Quisiera%20consultar%20por%20un%20servicio%20fotográfico" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fab fa-whatsapp"></i> 
-                    <span>WhatsApp</span>
-                </a>
-                <a href="https://instagram.com/byfoogles.frames" target="_blank" class="footer-link">
-                    <i class="fab fa-instagram"></i> 
-                    <span>Instagram</span>
-                </a>
-                <span class="footer-divider">|</span>
-                <a href="mailto:byfooglesframes@gmail.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> 
-                    <span>Contacto</span>
-                </a>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 ByFooglesFrames. <span class="legal-text">Todos los derechos reservados.</span></p>
-            </div>
-        </div>
+        <p>&copy; 2026 ByFooglesFrames · Facundo N. Delgado Ojeda. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="index.js"></script>
 </body>
 </html>

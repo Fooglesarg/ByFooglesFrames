@@ -2,84 +2,140 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Martín de los Andes | ByFooglesFrames</title>
-    <link rel="stylesheet" href="../../css/paisaje.css">
-    <link rel="icon" type="image/png" href="/icono.png">
-</head>
-<body class="category-paisaje">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>San Martín de los Andes | Paisaje | ByFooglesFrames</title>
+    <meta name="description" content="San Martín de los Andes: Bosques de lengas, lagos espejados y la pureza del aire andino patagónico.">
+    <meta name="author" content="Facundo N. Delgado Ojeda">
+    <meta name="theme-color" content="#0b0807">
+    <link rel="canonical" href="https://byfooglesframes.com/html/Paisaje/SanMartinAndes.html">
 
-    <header class="navbar visible">
-        <nav class="nav-container">
-            <ul class="nav-links">
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="Paisaje.html">Paisajes</a></li>
-                <li><a href="SanMartinAndes.html" class="active">San Martín</a></li>
-            </ul>
-        </nav>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ByFooglesFrames">
+    <meta property="og:title" content="San Martín de los Andes | Paisaje | ByFooglesFrames">
+    <meta property="og:description" content="San Martín de los Andes: Bosques de lengas, lagos espejados y la pureza del aire andino patagónico.">
+    <meta property="og:url" content="https://byfooglesframes.com/html/Paisaje/SanMartinAndes.html">
+    <meta property="og:image" content="https://byfooglesframes.com/images/Paisaje/San%20Martin%20de%20los%20Andes/intro.webp">
+
+    <link rel="icon" type="image/png" href="../../icono.png">
+
+    <!-- Tipografías (no bloquean la carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Íconos: se cargan después del contenido para no frenar la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <!-- Marca que hay JS para activar las animaciones de aparición (sin JS todo se ve igual) -->
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="../../css/sitio.css">
+    <script src="../../js/sitio.js" defer></script>
+</head>
+<body>
+
+    <div class="progreso" aria-hidden="true"></div>
+    <div class="luz-cursor" aria-hidden="true"></div>
+
+    <header class="nav solida">
+        <div class="nav-caja">
+            <a href="../../index.html" class="marca">ByFoogles<span>Frames</span></a>
+            <button class="nav-boton" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span>
+            </button>
+            <nav aria-label="Principal">
+                <ul class="nav-links" id="menu">
+                    <li><a href="../../index.html#galeria">Categorías</a></li>
+                    <li><a href="../../index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="../../index.html#contacto">Contacto</a></li>
+                    <li><a href="https://byfooglesvisuals.com" target="_blank" rel="noopener" class="nav-cta">Servicios</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="paisaje-main-content">
-        <header class="category-header-paisaje">
-            <div class="header-wrapper">
-                <h1>SAN MARTÍN</h1>
-                <p class="category-tagline">Bosques de lengas, lagos espejados y la pureza del aire andino patagónico.</p>
-            </div>
-        </header>
-
-        <section class="photo-stream-container">
-            <div class="stream-grid-mixed">
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (1).jpg" alt="SMA 01" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (2).jpg" alt="SMA 02" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (3).jpg" alt="SMA 03" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (4).jpg" alt="SMA 04" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (5).jpg" alt="SMA 05" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (6).jpg" alt="SMA 06" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (7).jpg" alt="SMA 07" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (8).jpg" alt="SMA 08" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (9).jpg" alt="SMA 09" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (10).jpg" alt="SMA 10" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (11).jpg" alt="SMA 11" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (12).jpg" alt="SMA 12" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (13).jpg" alt="SMA 13" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (14).jpg" alt="SMA 14" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (15).jpg" alt="SMA 15" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (16).jpg" alt="SMA 16" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (17).jpg" alt="SMA 17" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (18).jpg" alt="SMA 18" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (19).jpg" alt="SMA 19" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (20).jpg" alt="SMA 20" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (21).jpg" alt="SMA 21" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (22).jpg" alt="SMA 22" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (23).jpg" alt="SMA 23" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (24).jpg" alt="SMA 24" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (25).jpg" alt="SMA 25" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (26).jpg" alt="SMA 26" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (27).jpg" alt="SMA 27" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1 (28).jpg" alt="SMA 28" loading="lazy"></div>
-
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(1).jpg" alt="SMA 2 (1)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(2).jpg" alt="SMA 2 (2)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(3).jpg" alt="SMA 2 (3)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(4).jpg" alt="SMA 2 (4)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(5).jpg" alt="SMA 2 (5)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(6).jpg" alt="SMA 2 (6)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(7).jpg" alt="SMA 2 (7)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(8).jpg" alt="SMA 2 (8)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(9).jpg" alt="SMA 2 (9)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(10).jpg" alt="SMA 2 (10)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(11).jpg" alt="SMA 2 (11)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(12).jpg" alt="SMA 2 (12)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(13).jpg" alt="SMA 2 (13)" loading="lazy"></div>
-                <div class="stream-item horizontal"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20(14).jpg" alt="SMA 2 (14)" loading="lazy"></div>
-            </div>
+    <main>
+        <section class="cabecera">
+            <div class="cabecera-fondo" style="background-image:url('../../images/Paisaje/San%20Martin%20de%20los%20Andes/intro-mini.webp')" aria-hidden="true"></div>
+            <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+            <nav aria-label="Ubicación"><ol class="migas"><li><a href="../../index.html">Inicio</a></li><li><a href="Paisaje.html">Paisaje</a></li><li><span aria-current="page">San Martín de los Andes</span></li></ol></nav>
+            <h1><span class="degradado">San Martín de los Andes</span></h1>
+            <p class="cabecera-texto">Bosques de lengas, lagos espejados y la pureza del aire andino patagónico.</p>
+            <div class="cabecera-info"><span class="chip"><i class="fa-solid fa-images"></i> 42 fotos</span></div>
         </section>
 
-        <footer class="navigation-footer">
-            <a href="Paisaje.html" class="btn-back">Volver a Paisajes</a>
-        </footer>
+        <section class="contenido">
+            <div class="grupo">
+                
+                <div class="galeria">
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%281%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%281%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 1 de 42" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%282%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%282%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 2 de 42" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%283%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%283%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 3 de 42" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%284%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%284%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 4 de 42" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%285%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%285%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 5 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%286%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%286%29.webp" width="900" height="521" alt="San Martín de los Andes, foto 6 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%287%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%287%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 7 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%288%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%288%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 8 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%289%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%289%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 9 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2810%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2810%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 10 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2811%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2811%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 11 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2812%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2812%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 12 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2813%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2813%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 13 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2814%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2814%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 14 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2815%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2815%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 15 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2816%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2816%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 16 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2817%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2817%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 17 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2818%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2818%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 18 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2819%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2819%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 19 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2820%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2820%29.webp" width="900" height="345" alt="San Martín de los Andes, foto 20 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2821%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2821%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 21 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2822%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2822%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 22 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2823%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2823%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 23 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2824%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2824%29.webp" width="900" height="526" alt="San Martín de los Andes, foto 24 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2825%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2825%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 25 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2826%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2826%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 26 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2827%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2827%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 27 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2828%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/1%20%2828%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 28 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%281%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%281%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 29 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%282%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%282%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 30 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%283%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%283%29.webp" width="900" height="565" alt="San Martín de los Andes, foto 31 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%284%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%284%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 32 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%285%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%285%29.webp" width="900" height="553" alt="San Martín de los Andes, foto 33 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%286%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%286%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 34 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%287%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%287%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 35 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%288%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%288%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 36 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%289%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%289%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 37 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2810%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2810%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 38 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2811%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2811%29.webp" width="900" height="600" alt="San Martín de los Andes, foto 39 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2812%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2812%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 40 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2813%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2813%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 41 de 42" loading="lazy" decoding="async"></figure>
+                    <figure class="foto"><img src="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2814%29-mini.webp" data-grande="../../images/Paisaje/San%20Martin%20de%20los%20Andes/2%20%2814%29.webp" width="900" height="505" alt="San Martín de los Andes, foto 42 de 42" loading="lazy" decoding="async"></figure>
+                </div>
+            </div>
+            <div class="otros aparecer">
+                <h2>Más de Paisaje</h2><div class="otros-lista"><a class="chip" href="Tandil.html"><i class="fa-solid fa-images"></i> Tandil</a><a class="chip" href="Berazategui.html"><i class="fa-solid fa-images"></i> Berazategui</a></div><h2>Otras categorías</h2><div class="otros-lista"><a class="chip" href="../Social/Social.html"><i class="fa-solid fa-martini-glass-citrus"></i> Social</a><a class="chip" href="../Estudio/Estudio.html"><i class="fa-solid fa-camera-retro"></i> Estudio</a><a class="chip" href="../Street/Street.html"><i class="fa-solid fa-person-walking"></i> Street</a><a class="chip" href="../PaisajeUrbano/PaisajeUrban.html"><i class="fa-solid fa-city"></i> Paisaje Urbano</a><a class="chip" href="../Astrofotografia/Astrofotografia.html"><i class="fa-solid fa-star"></i> Astrofotografía</a></div>
+                <a href="Paisaje.html" class="boton boton-vidrio"><i class="fa-solid fa-arrow-left"></i> Volver a Paisaje</a>
+            </div>
+        </section>
     </main>
 
-    <script src="../../index.js"></script>
+    <footer class="pie">
+        <div class="pie-gigante" aria-hidden="true">ByFooglesFrames</div>
+        <div class="pie-redes">
+            <a href="https://wa.me/5491135634438?text=Hola!%20Quisiera%20consultar%20por%20un%20servicio%20fotogr%C3%A1fico" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/byfoogles.frames" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:byfooglesframes@gmail.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 ByFooglesFrames · Facundo N. Delgado Ojeda. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="visor" hidden role="dialog" aria-modal="true" aria-label="Visor de fotos">
+        <button class="visor-cerrar" type="button" aria-label="Cerrar">&times;</button>
+        <button class="visor-flecha anterior" type="button" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <img class="visor-img" alt="">
+        <span class="visor-cargando" hidden aria-hidden="true"></span>
+        <button class="visor-flecha siguiente" type="button" aria-label="Foto siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+        <span class="visor-contador"></span>
+    </div>
+
 </body>
-</html> 
+</html>
