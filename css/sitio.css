@@ -200,12 +200,12 @@ img { max-width: 100%; display: block; }
 }
 .hero-particulas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
 
-/* Manchas de luz: carmesí, vino y rubor */
+/* Manchas de luz del inicio: púrpura y violeta (las luces del canvas siguen rosas) */
 .aurora { position: absolute; inset: 0; z-index: -3; opacity: 0.35; }
 .aurora span { position: absolute; border-radius: 50%; animation: flotar 18s ease-in-out infinite alternate; }
-.aurora span:nth-child(1) { width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(190, 26, 72, 0.7), transparent 65%); top: -25%; left: -15%; }
-.aurora span:nth-child(2) { width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(190, 26, 72, 0.65), transparent 65%); top: 10%; right: -18%; animation-delay: -6s; animation-duration: 22s; }
-.aurora span:nth-child(3) { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(247, 161, 181, 0.5), transparent 65%); bottom: -25%; left: 28%; animation-delay: -12s; }
+.aurora span:nth-child(1) { width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(112, 36, 190, 0.75), transparent 65%); top: -25%; left: -15%; }
+.aurora span:nth-child(2) { width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(146, 64, 230, 0.65), transparent 65%); top: 10%; right: -18%; animation-delay: -6s; animation-duration: 22s; }
+.aurora span:nth-child(3) { width: 45vw; height: 45vw; background: radial-gradient(circle, rgba(186, 140, 255, 0.5), transparent 65%); bottom: -25%; left: 28%; animation-delay: -12s; }
 @keyframes flotar {
     0%   { transform: translate(0, 0) scale(1); }
     50%  { transform: translate(6vw, 4vh) scale(1.15); }
