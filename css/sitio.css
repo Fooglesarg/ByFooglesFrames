@@ -222,19 +222,6 @@ img { max-width: 100%; display: block; }
 .visor-camara i:nth-child(2) { top: 0; right: 0; border-left: 0; border-bottom: 0; }
 .visor-camara i:nth-child(3) { bottom: 0; left: 0; border-right: 0; border-top: 0; }
 .visor-camara i:nth-child(4) { bottom: 0; right: 0; border-left: 0; border-top: 0; }
-.visor-datos {
-    position: absolute;
-    bottom: 14px; left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 22px;
-    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-    font-size: 0.78rem;
-    letter-spacing: 2px;
-    color: rgba(255, 230, 200, 0.6);
-    white-space: nowrap;
-}
-.visor-datos b { color: var(--rojo); font-weight: 400; animation: parpadeo 1.4s steps(1) infinite; }
 .visor-foco {
     position: absolute;
     top: 50%; left: 50%;
@@ -848,8 +835,6 @@ a.chip:hover { border-color: var(--ambar); box-shadow: 0 0 18px rgba(255, 179, 7
     .hero { padding: 110px 16px 120px; }
     .visor-camara { inset: 84px 12px 14px; }
     .visor-camara i { width: 22px; height: 22px; }
-    .visor-datos { gap: 12px; font-size: 0.66rem; letter-spacing: 1px; bottom: 10px; }
-    .visor-datos .opcional { display: none; }
     .visor-foco { display: none; }
     .pastilla { font-size: 0.75rem; letter-spacing: 0.5px; padding: 7px 14px; margin-bottom: 24px; }
     .hero-bajar { bottom: 52px; }
