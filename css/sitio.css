@@ -412,6 +412,11 @@ img { max-width: 100%; display: block; }
 .mosaico { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .mosaico .ancha { grid-column: span 2; }
 .mosaico .alta { grid-row: span 2; }
+/* En PC, los álbumes de a 2 o de a 4 van en dos columnas para que no quede una tarjeta sola */
+@media (min-width: 961px) {
+    .mosaico:has(> :nth-child(2):last-child),
+    .mosaico:has(> :nth-child(4):last-child) { grid-template-columns: repeat(2, 1fr); }
+}
 
 .tarjeta {
     position: relative;
@@ -803,6 +808,7 @@ a.chip:hover { border-color: var(--rubor); box-shadow: 0 0 18px rgba(247, 161, 1
     .mosaico { grid-template-columns: 1fr 1fr; }
     .mosaico .ancha { grid-column: span 2; }
     .mosaico .alta { grid-row: auto; min-height: 380px; }
+    .mosaico .cierre { grid-column: span 2; }
     .sobre { grid-template-columns: 1fr; gap: 40px; }
     .canales { grid-template-columns: 1fr; max-width: 520px; }
 }
@@ -843,7 +849,7 @@ a.chip:hover { border-color: var(--rubor); box-shadow: 0 0 18px rgba(247, 161, 1
 
     .seccion { padding: 80px 16px; }
     .mosaico { grid-template-columns: 1fr; gap: 14px; }
-    .mosaico .ancha { grid-column: auto; }
+    .mosaico .ancha, .mosaico .cierre { grid-column: auto; }
     .tarjeta, .alta { min-height: 260px; padding: 22px; }
     .datos { gap: 10px; }
     .dato { padding: 18px; }
